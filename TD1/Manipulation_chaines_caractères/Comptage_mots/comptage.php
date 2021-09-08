@@ -17,7 +17,7 @@
     echo ("$phrase <br>");
     echo ("Cette phrase contient " . str_word_count($phrase) . " mots");
     $mots = explode($separator, $phrase);
-    array_count_values($mots); //Compter le nombre d'occurences
+    
 
     foreach ($mots as $valeur) {
         echo ("<br> $valeur");
