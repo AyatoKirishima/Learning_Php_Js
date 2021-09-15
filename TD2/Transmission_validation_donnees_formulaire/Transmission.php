@@ -118,15 +118,13 @@
             <!-- Commentaire -->
             <label for="commentaire">Commentaires :</label>
             <br>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <textarea name="" id="" cols="100" rows="10"></textarea>
         </fieldset>
 
         <br>
 
-        <button>Valider</button>
+        <input type="submit" value="Valider">
     </form>
 </body>
-
-</html>
 
 </html>
