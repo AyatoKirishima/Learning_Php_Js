@@ -45,6 +45,19 @@
         if(isset($_POST['Addition']) AND $_POST['Addition']=='Addition') {
             $res = $valeur1 + $valeur2;
         }
+        elseif (isset($_POST['Multiplication']) AND $_POST['Multiplication']=='Multiplication') {
+            $res = $valeur1 * $valeur2;
+        }
+        elseif (isset($_POST['Soustraction']) AND $_POST['Soustraction']=='Soustraction') {
+            $res = $valeur1 - $valeur2;
+        }
+        elseif (isset($_POST['Division']) AND $_POST['Division']=='Division') {
+            if ($valeur2 == 0) {
+                $res = 0;
+            } else {
+                $res = $valeur1 / $valeur2;
+            }
+        }
         echo ("<br><br>Résultat du calcul :\n");
         echo $res;
         ?>
