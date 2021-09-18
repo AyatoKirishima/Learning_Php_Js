@@ -8,3 +8,8 @@ https://devweb.iutmetz.univ-lorraine.fr/~muller851u/PHP/doc.extension
 ```
 http://localhost/nomdetondossier
 ```
+ou
+```
+http://localhost:8888/nomdetondossier
+```
+en cas de bug
