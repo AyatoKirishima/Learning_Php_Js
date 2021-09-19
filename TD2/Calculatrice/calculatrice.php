@@ -16,14 +16,14 @@
 
         <!-- Valeur1 -->
         <label for="Valeur1">Valeur 1 :</label>
-        <input type="number" min="0" required name="Valeur1" placeholder=" 1e Valeur " />
+        <input type="number" required name="Valeur1" placeholder=" 1e Valeur " />
         <?php $valeur1=$_POST['Valeur1'];?>
 
         <br>
 
         <!-- Valeur2 -->
         <label for="Valeur2">Valeur 2 :</label>
-        <input type="number" min="0" required name="Valeur2" placeholder=" 2e Valeur " />
+        <input type="number" required name="Valeur2" placeholder=" 2e Valeur " />
         <?php $valeur2=$_POST['Valeur2'];?>
 
         <br>
@@ -54,12 +54,17 @@
         elseif (isset($_POST['Division']) AND $_POST['Division']=='Division') {
             if ($valeur2 == 0) {
                 $res = 0;
+                echo("<br><br>Erreur division par 0 :)");
             } else {
                 $res = $valeur1 / $valeur2;
             }
         }
         echo ("<br><br>Résultat du calcul :\n");
-        echo $res;
+        if ($res == 0) {
+            echo ("Erreur");
+        } else {
+            echo $res;
+        }
         ?>
     </form>
 </body>
