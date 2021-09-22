@@ -10,6 +10,8 @@
 
     <?php 
         $error = false;
+        $valeur1=$_POST['Valeur1'];
+        $valeur2=$_POST['Valeur2'];
         if ($valeur2 == 0 && $_POST['Division'] == 'Division') 
         {
             $error = true;
@@ -41,7 +43,6 @@
         <label for="Valeur2">Valeur 2 :</label>
         <input type="number" required name="Valeur2" 
         <?php 
-        $valeur2=$_POST['Valeur2'];
 
         if ($error == true) {
             echo('value='.$valeur2);
