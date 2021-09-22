@@ -12,7 +12,7 @@
         $error = false;
         $valeur1=$_POST['Valeur1'];
         $valeur2=$_POST['Valeur2'];
-        if ($valeur2 == 0 && array_key_exist('Division', $POST) && $_POST['Division'] == 'Division') 
+        if ($valeur2 == 0 && array_key_exists('Division', $_POST) && $_POST['Division'] == 'Division') 
         {
             $error = true;
         }
