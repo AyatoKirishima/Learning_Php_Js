@@ -9,7 +9,9 @@
 </head>
 
     <?php 
-        $error = true;
+        $error = false;
+        $valeur1=$_POST['Valeur1'];
+        $valeur2=$_POST['Valeur2'];
     ?>
 
 <body>
@@ -27,7 +29,6 @@
         ?>
         
         placeholder=" 1e Valeur " />
-        <?php $valeur1=$_POST['Valeur1'];?>
 
         <br>
 
