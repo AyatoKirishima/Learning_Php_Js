@@ -16,16 +16,28 @@
 
         <!-- Valeur1 -->
         <label for="Valeur1">Valeur 1 :</label>
-        <input type="number" required name="Valeur1" placeholder=" 1e Valeur " />
+        <input type="number" required name="Valeur1"
+        <?php if ($error == true) {
+            echo('value='.$valeur1);
+        }
+        ?>
+        
+        placeholder=" 1e Valeur " />
         <?php $valeur1=$_POST['Valeur1'];?>
 
         <br>
 
         <!-- Valeur2 -->
         <label for="Valeur2">Valeur 2 :</label>
-        <input type="number" required name="Valeur2" placeholder=" 2e Valeur " />
-        <?php $valeur2=$_POST['Valeur2'];?>
+        <input type="number" required name="Valeur2" 
+        <?php $valeur2=$_POST['Valeur2'];
 
+        if ($error == true) {
+            echo('value='.$valeur2);
+        }
+        ?>
+        
+        placeholder=" 2e Valeur " />
         <br>
 
         <!-- Submission d'opérations -->
@@ -41,6 +53,7 @@
 
         <?php
         $res = 0;
+        $error = false;
 
         if(isset($_POST['Addition']) AND $_POST['Addition']=='Addition') {
             $res = $valeur1 + $valeur2;
@@ -55,12 +68,13 @@
             if ($valeur2 == 0) {
                 $res = 0;
                 echo("<br><br>Erreur division par 0 :)");
+                $error = true;
             } else {
                 $res = $valeur1 / $valeur2;
             }
         }
         echo ("<br><br>Résultat du calcul :\n");
-        if ($res == 0) {
+        if ($error) {
             echo ("Erreur");
         } else {
             echo $res;
