@@ -23,7 +23,7 @@
         <input type="number" required name="Valeur1"
         <?php
         $valeur1=$_POST['Valeur1'];
-        
+
         if ($error == true) {
             echo('value='.$valeur1);
         }
@@ -67,7 +67,7 @@
                 $res = $valeur1 / $valeur2;
             }
         }
-        echo ("<br>Résultat du calcul :\n");
+        echo ("<br><br>Résultat du calcul :\n");
         if ($error) {
             echo ("Erreur");
         } else {
