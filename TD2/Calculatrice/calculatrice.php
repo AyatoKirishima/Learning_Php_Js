@@ -8,6 +8,10 @@
     <title>Calculatrice</title>
 </head>
 
+    <?php 
+        $error = false;
+    ?>
+
 <body>
     <form action="" method="POST">
         <h1>
@@ -39,21 +43,8 @@
         
         placeholder=" 2e Valeur " />
         <br>
-
-        <!-- Submission d'opérations -->
-        <p>Faites l'opération de votre choix : </p>
-
-        <input type="submit" value="Addition" name="Addition">
-        <br><br>
-        <input type="submit" value="Multiplication" name="Multiplication">
-        <br><br>
-        <input type="submit" value="Soustraction" name="Soustraction">
-        <br><br>
-        <input type="submit" value="Division" name="Division">
-
         <?php
         $res = 0;
-        $error = false;
 
         if(isset($_POST['Addition']) AND $_POST['Addition']=='Addition') {
             $res = $valeur1 + $valeur2;
@@ -80,6 +71,17 @@
             echo $res;
         }
         ?>
+
+        <!-- Submission d'opérations -->
+        <p>Faites l'opération de votre choix : </p>
+
+        <input type="submit" value="Addition" name="Addition">
+        <br><br>
+        <input type="submit" value="Multiplication" name="Multiplication">
+        <br><br>
+        <input type="submit" value="Soustraction" name="Soustraction">
+        <br><br>
+        <input type="submit" value="Division" name="Division">
     </form>
 </body>
 
