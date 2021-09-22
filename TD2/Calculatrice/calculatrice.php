@@ -10,8 +10,6 @@
 
     <?php 
         $error = false;
-        $valeur1=$_POST['Valeur1'];
-        $valeur2=$_POST['Valeur2'];
     ?>
 
 <body>
@@ -23,7 +21,10 @@
         <!-- Valeur1 -->
         <label for="Valeur1">Valeur 1 :</label>
         <input type="number" required name="Valeur1"
-        <?php if ($error == true) {
+        <?php
+        $valeur1=$_POST['Valeur1'];
+        
+        if ($error == true) {
             echo('value='.$valeur1);
         }
         ?>
@@ -35,7 +36,8 @@
         <!-- Valeur2 -->
         <label for="Valeur2">Valeur 2 :</label>
         <input type="number" required name="Valeur2" 
-        <?php $valeur2=$_POST['Valeur2'];
+        <?php 
+        $valeur2=$_POST['Valeur2'];
 
         if ($error == true) {
             echo('value='.$valeur2);
