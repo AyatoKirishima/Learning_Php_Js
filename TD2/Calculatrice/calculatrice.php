@@ -10,6 +10,10 @@
 
     <?php 
         $error = false;
+        if ($valeur2 == 0 && $_POST['Division'] == 'Division') 
+        {
+            $error = true;
+        }
     ?>
 
 <body>
@@ -62,7 +66,7 @@
             if ($valeur2 == 0) {
                 $res = 0;
                 echo("<br><br>Erreur division par 0 :)");
-                $error = true;
+               // $error = true;
             } else {
                 $res = $valeur1 / $valeur2;
             }
