@@ -9,7 +9,7 @@
 </head>
 
     <?php 
-        $error = false;
+        $error = true;
     ?>
 
 <body>
@@ -64,7 +64,7 @@
                 $res = $valeur1 / $valeur2;
             }
         }
-        echo ("<br><br>Résultat du calcul :\n");
+        echo ("<br>Résultat du calcul :\n");
         if ($error) {
             echo ("Erreur");
         } else {
