@@ -45,9 +45,11 @@
     </table>
 
     <br>
-    <label for="Designation">Designation :</label>
+    <label for="Designation">Designation : </label>
     <input type="text" required name="Designation">
-    <input type="submit">
+    <label for="Prix">Prix Unitaire : </label>
+    <input type="text" required name="Prix">
+    <input type="submit" name="Ajouter" value="Ajouter">
 </body>
 
 </html>
