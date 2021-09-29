@@ -48,7 +48,7 @@
         function NombreDeCotes();
     }
 
-    private class Triangle {
+    private class Triangle extends Polygone {
         function NombreDeCotes() {
             return 3;
         }
@@ -58,7 +58,7 @@
         }
     }
 
-    private class Rectangle {
+    private class Rectangle extends Polygone {
         function NombreDeCotes() {
             return 4;
         }
@@ -69,7 +69,10 @@
     }
 
     private class Cercle {
-        
+        function Aire($rayon) {
+            $pi = 3.14;
+            return $pi * pow($rayon);
+        }
     }
 
 }
