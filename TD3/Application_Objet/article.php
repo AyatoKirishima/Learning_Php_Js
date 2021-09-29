@@ -1,51 +1,53 @@
-<?php 
-    class Article {
-        private $designation, $ref, $prixUnit; //Référence,prix Unitaire
-    
-        function __constructor($designation, $ref, $prixUnit){
-            $this->designation = $designation;
+<?php
+    class Article
+    {
+        private $designation, $ref, $prixUnitaire;
+
+        function __construct($ref, $designation, $prixUnitaire)
+        {
             $this->ref = $ref;
-            $this->prixUnit = $prixUnit;
+            $this->designation = $designation;
+            $this->prixUnitaire = $prixUnitaire;
         }
 
-        // Prix
-
-        function SetPrix($prixUnit) {
-            $this->prixUnit = $prixUnit;
+        function setPrix($prix)
+        {
+            $this->prixUnitaire = $prix;
         }
 
-        function GetPrix($prixUnit) {
-            return $this->prixUnit;
+        function getPrix()
+        {
+            return $this->prixUnitaire;
         }
 
-        // Désignation
-
-        function SetDesignation($designation) {
+        function setDesignation($designation)
+        {
             $this->designation = $designation;
         }
 
-        function GetDesignation($designation) {
+        function getDesignation()
+        {
             return $this->designation;
         }
 
-        // Référence
-
-        function SetReference($ref) {
+        function setRef($ref)
+        {
             $this->ref = $ref;
         }
 
-        function GetReference($ref) {
+        function getRef()
+        {
             return $this->ref;
         }
-    
-        // Afficher
 
-        function Afficher() {
-            echo("<tr>");
-            echo("<td> $ref </td>");
-            echo("<td> $designation </td>");
-            echo("<td> $rpixUnitaire </td>");
+        function afficher()
+        {
+            echo("<tr>");  
+                echo("<td>".$this->getRef()."</td>");
+                echo("<td>".$this->getDesignation()."</td>");
+                echo("<td>".$this->getPrix()."</td>");
+            echo("</tr>");
         }
-
     }
+    
 ?>

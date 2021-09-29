@@ -15,20 +15,33 @@
             <tr>
                 <th colspan="3">Articles</th>
             </tr>
-
+        </thead>
             <tr>
                 <th>Référence</th>
                 <th>Désignation</th>
                 <th>Prix Unitaire</th>
             </tr>
 
-            <?php include_once "article.php"
-                class Article {
-                    public 
+            <?php include_once "article.php";
+                $a1 = new Article("Article 1", 1, 8);
+                //var_dump($a1);
+                $a2 = new Article("Article 2", 2, 5);
+            
+                //echo($a1->GetDesignation());
+
+                $arrayArticles = array(1 => $a1, 2 => $a2);
+
+                $s = serialize($arrayArticles);
+
+                file_put_contents('store.txt', $s);
+                $s = file_get_contents('store.txt');
+
+                $arrayNewArticles = unserialize($s);
+
+                foreach ($arrayNewArticles as $article) {
+                    $article->Afficher();
                 }
-                
             ?>
-        </thead>
     </table>
 </body>
 
