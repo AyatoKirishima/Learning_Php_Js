@@ -10,6 +10,6 @@ http://localhost/namefolder/namefile.php
 ```
 ou
 ```
-http://localhost:8888/
+http://localhost/Git_clones/
 ```
-en cas de bug
+dans notre cas
