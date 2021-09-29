@@ -34,7 +34,44 @@
 
     function conflit_avec($p2) {
         if (($this->distance > 2) && ($this->color == $p2->color)) {
-            echo("");
+            conflit_avec() = false;
+        } else {
+            conflit_avec() = true;
+        }
+    }
+
+    abstract class Figure {
+        function Aire($base, $hauteur);
+    }
+
+    abstract class Polygone() extends Figure {
+        function NombreDeCotes();
+    }
+
+    private class Triangle extends Polygone {
+        function NombreDeCotes() {
+            return 3;
+        }
+
+        function Aire($base, $hauteur) {
+            return 0.5 * $base * $hauteur;
+        }
+    }
+
+    private class Rectangle extends Polygone {
+        function NombreDeCotes() {
+            return 4;
+        }
+
+        function Aire($base, $hauteur) {
+            return $base * $hauteur;
+        }
+    }
+
+    private class Cercle {
+        function Aire($rayon) {
+            $pi = 3.14;
+            return $pi * pow($rayon);
         }
     }
 }
