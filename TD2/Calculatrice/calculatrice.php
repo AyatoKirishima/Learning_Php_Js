@@ -41,7 +41,7 @@
 
         <!-- Valeur2 -->
         <label for="Valeur2">Valeur 2 :</label>
-        <input type="number" required name="Valeur2" 
+        <input type="number" required name="Valeur2">
         <?php 
 
         if ($error == true) {
