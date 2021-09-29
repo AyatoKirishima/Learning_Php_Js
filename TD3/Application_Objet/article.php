@@ -1,5 +1,5 @@
 <?php 
-    public class Article() {
+    class Article {
         private $designation, $ref, $prixUnit; //Référence,prix Unitaire
     
         function __constructor($designation, $ref, $prixUnit){
@@ -39,5 +39,13 @@
         }
     
         // Afficher
+
+        function Afficher() {
+            echo("<tr>");
+            echo("<td> $ref </td>");
+            echo("<td> $designation </td>");
+            echo("<td> $rpixUnitaire </td>");
+        }
+
     }
 ?>
