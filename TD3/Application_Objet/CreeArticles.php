@@ -23,9 +23,9 @@
             </tr>
 
             <?php include_once "article.php";
-                $a1 = new Article("Article 1", 1, 8);
+                $a1 = new Article("1", "Brosse à dents", 8);
                 //var_dump($a1);
-                $a2 = new Article("Article 2", 2, 5);
+                $a2 = new Article("2", "Patate", 5);
             
                 //echo($a1->GetDesignation());
 
