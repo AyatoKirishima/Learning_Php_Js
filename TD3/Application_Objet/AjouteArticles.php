@@ -23,14 +23,13 @@
         </tr>
 
         <?php include_once "article.php";
+        // Création de deux articles
         $a1 = new Article("Article 1", 1, 8);
-        //var_dump($a1);
         $a2 = new Article("Article 2", 2, 5);
-
-        //echo($a1->GetDesignation());
-
+        // Insertion des 2 articles dans l'array
         $arrayArticles = array(1 => $a1, 2 => $a2);
 
+        // Sérialisation / Récupération de données
         $s = serialize($arrayArticles);
 
         file_put_contents('store.txt', $s);
@@ -38,6 +37,7 @@
 
         $arrayNewArticles = unserialize($s);
 
+        // Affichage des articles dans la table
         foreach ($arrayNewArticles as $article) {
             $article->Afficher();
         }
@@ -45,6 +45,7 @@
     </table>
 
     <br>
+    <!-- Zone d'Ajout d'un article -->
     <label for="Designation">Designation : </label>
     <input type="text" required name="Designation">
     <label for="Prix">Prix Unitaire : </label>
