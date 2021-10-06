@@ -1,3 +1,5 @@
+<!-- Afficher les données de la table sites dans une table HTML -->
+
 <!DOCTYPE html>
 <html lang="en">
 
