@@ -38,15 +38,15 @@
     <form action="" method="POST">
         <label for="nom">Nom :</label>
         <input type="text" required name="nom">
-        <br>
+        <br><br>
         <label for="ville">Ville :</label>
         <input type="text" required name="ville">
-        <br>
+        <br><br>
         <label for="latitude">Latitude :</label>
-        <input type="number" required name="latitude">
-        <br>
+        <input type="number" min="-180" max="180" required name="latitude">
+        <br><br>
         <label for="longitude">Longitude :</label>
-        <input type="number" required name="longitude">
+        <input type="number" min="-180" max="180" required name="longitude">
         <br><br>
         <input type="submit" value="Ajouter" name="Ajouter">
     </form>

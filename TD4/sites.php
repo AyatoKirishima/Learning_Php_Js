@@ -42,6 +42,18 @@
                         <td>
                             Longitude
                         </td>
+
+                        <td>
+                            Supprimer
+                        </td>
+
+                        <td>
+                            Modifier
+                        </td>
+
+                        <td>
+                            Ventes
+                        </td>
                     </tr>
                 </thead>');
 
@@ -53,9 +65,14 @@
                     echo ('<td>'.$row["Ville"].'</td>');
                     echo ('<td>'.$row["Latitude"].'</td>');
                     echo ('<td>'.$row["Longitude"].'</td>');
+                    echo('<td><input type="submit" value="Supprimer" name="Supprimer"></td>');
+                    echo('<td><input type="submit" value="Modifier" name="Modifier"></td>');
+                    echo('<td><input type="submit" value="Voir" name="Ventes"></td>');
                     echo('</tr>');
                 }
+
             echo("</table>");
+            echo('<input type="submit" value="Ajouter" name="Ajouter">');
         }
     ?>
 
