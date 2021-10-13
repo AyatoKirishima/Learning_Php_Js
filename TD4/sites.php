@@ -72,7 +72,7 @@
                 }
 
             echo("</table>");
-            echo('<input type="submit" value="Ajouter" name="Ajouter">');
+            echo('<a href="ajout.php"> <input type="submit" value="Ajouter" name="Ajouter"> </a>');
         }
     ?>
 
