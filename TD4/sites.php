@@ -19,7 +19,10 @@
         // Suppression
         function delete() {
             include_once 'connexion.php';
-            $delete_stmt = $objPdo->query("DELETE FROM Sites WHERE idSite = " . $row["idSite"]);
+            $delete_stmt = $objPdo->query("DELETE FROM Sites WHERE idSite = ?");
+            $delete_stmt->bindValue(1, $row["idSite"], PDO::PARAM_STR);
+            $delete_stmt->execute();
+            header('Location:sites.php');
         }
         
         $result = $objPdo->query('select * from Sites');
@@ -65,7 +68,10 @@
                     echo ('<td>'.$row["Ville"].'</td>');
                     echo ('<td>'.$row["Latitude"].'</td>');
                     echo ('<td>'.$row["Longitude"].'</td>');
-                    echo('<td><input type="submit" value="Supprimer" name="Supprimer" onclick="delete()"><input type="submit" value="Modifier" name="Modifier"><input type="submit" value="Ventes" name="Ventes"></td>');
+                    echo('<td>
+                    <input class="supprimer" type="submit" value="Supprimer" name="Supprimer" onclick="delete()">
+                    <input type="submit" class="modifier" value="Modifier" name="Modifier">
+                    <input type="submit" class="ventes" value="Ventes" name="Ventes"></td>');
                     echo('</tr>');
                 }
 

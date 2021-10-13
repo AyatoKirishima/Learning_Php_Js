@@ -5,3 +5,21 @@ table, thead {
 th, tr, td {
     text-align: center;
 }
+
+.supprimer {
+    background-color: brown;
+    color: white;
+    cursor: pointer;
+}
+
+.modifier {
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+.ventes {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
