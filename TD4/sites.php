@@ -12,25 +12,14 @@
 </head>
 
 <body>
+    <?php
+    include_once 'connexion.php';
 
-<?php
-        include_once 'connexion.php';
+    $result = $objPdo->query('select * from Sites');
+    while ($row = $result->fetch()) {
+        // echo $row ['idSite'] . " - " . $row ['Nom'] . " - " . $row ['Ville'] . " - " . $row ['Latitude'] . " - " . $row ['Longitude'] . "<br />";
 
-        // Suppression
-        function delete() {
-            include_once 'connexion.php';
-            $delete_stmt = $objPdo->query("DELETE FROM Sites WHERE idSite = ?");
-            $delete_stmt->bindValue(1, $row["idSite"], PDO::PARAM_STR);
-            $delete_stmt->execute();
-            header('Location:sites.php');
-        }
-        
-        $result = $objPdo->query('select * from Sites');
-        while ($row=$result->fetch( ) )
-        {
-           // echo $row ['idSite'] . " - " . $row ['Nom'] . " - " . $row ['Ville'] . " - " . $row ['Latitude'] . " - " . $row ['Longitude'] . "<br />";
-
-                echo('<table>
+        echo ('<table>
                 <thead>
                     <tr>
                         <td>
@@ -60,25 +49,25 @@
                     </tr>
                 </thead>');
 
-                foreach ($result as $row)
-                {
-                    echo('<tr>');
-                    echo ('<td>'.$row["idSite"].'</td>');
-                    echo ('<td>'.$row["Nom"].'</td>');
-                    echo ('<td>'.$row["Ville"].'</td>');
-                    echo ('<td>'.$row["Latitude"].'</td>');
-                    echo ('<td>'.$row["Longitude"].'</td>');
-                    echo('<td>
-                    <input class="supprimer" type="submit" value="Supprimer" name="Supprimer" onclick="delete()">
-                    <input type="submit" class="modifier" value="Modifier" name="Modifier">
-                    <input type="submit" class="ventes" value="Ventes" name="Ventes"></td>');
-                    echo('</tr>');
-                }
-
-            echo("</table>");
-            echo('<a href="ajout.php"> <input type="submit" value="Ajouter" name="Ajouter"> </a>');
+        foreach ($result as $row) {
+            echo ('<tr>');
+            echo ('<td>' . $row["idSite"] . '</td>');
+            echo ('<td>' . $row["Nom"] . '</td>');
+            echo ('<td>' . $row["Ville"] . '</td>');
+            echo ('<td>' . $row["Latitude"] . '</td>');
+            echo ('<td>' . $row["Longitude"] . '</td>');
+            echo ('<td>
+                <a href="supprimer.php?idSite='.$row["idSite"].'"> 
+                <input type="submit" class="supprimer" value="Supprimer" name="Supprimer">
+                </a>
+                <input type="submit" class="modifier" value="Modifier" name="Modifier">
+                <input type="submit" class="ventes" value="Ventes" name="Ventes"></td>');
+            echo ('</tr>');
         }
+        echo ("</table>");
+    }
     ?>
+    <a href="ajout.php"> <input type="button" value="Ajouter" name="Ajouter"> </a>
 
 </body>
 
