@@ -1,18 +1,25 @@
-<!-- Afficher les données de la table sites dans une table HTML -->
+<?php
+    include_once "connexion.php";
+    //include_once "sites.php";
 
-<!DOCTYPE html>
-<html lang="en">
+    if (array_key_exists('nom', $_POST) && array_key_exists('ville', $_POST) && array_key_exists('latitude', $_POST) && array_key_exists('longitude', $_POST)) {
+        $nom = $_POST['nom'];
+        $ville = $_POST['ville'];
+        $latitude = $_POST['latitude'];
+        $longitude = $_POST['longitude'];
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sites</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+        // Préparation insertion
+        $insert_stmt = $objPdo->prepare("INSERT INTO Sites (Nom,Ville,Latitude,Longitude) VALUES( ? , ? , ? , ? )");
 
-<body>
-    <?php
+        $insert_stmt->bindValue(1, $nom, PDO::PARAM_STR);
+        $insert_stmt->bindValue(2, $ville, PDO::PARAM_STR);
+        $insert_stmt->bindValue(3, $latitude, PDO::PARAM_STR);
+        $insert_stmt->bindValue(4, $longitude, PDO::PARAM_STR);
+        $insert_stmt->execute();
+        // Redirection après ajout
+        header('Location:sites.php');
+    }
+
     include_once 'connexion.php';
 
     $result = $objPdo->query('select * from Sites');
@@ -41,11 +48,6 @@
                         <td>
                             Longitude
                         </td>
-
-                        <td>
-                            Actions
-                        </td>
-
                     </tr>
                 </thead>');
 
@@ -56,23 +58,13 @@
             echo ('<td>' . $row["Ville"] . '</td>');
             echo ('<td>' . $row["Latitude"] . '</td>');
             echo ('<td>' . $row["Longitude"] . '</td>');
-            echo ('<td>
-                <a href="supprimer.php?idSite='.$row["idSite"].'"> 
-                <input type="submit" class="supprimer" value="Supprimer" name="Supprimer">
-                </a>
-
-                <a href="modifier.php">
-                <input type="submit" class="modifier" value="Modifier" name="Modifier">
-                </a>
-                
-                <input type="submit" class="ventes" value="Ventes" name="Ventes"></td>');
+            //echo('<td><input type="submit" value="Supprimer" name="Supprimer"></td>');
+            //echo('<td><input type="submit" value="Modifier" name="Modifier"></td>');
+            //echo('<td><input type="submit" value="Voir" name="Ventes"></td>');
             echo ('</tr>');
         }
+
         echo ("</table>");
+        //echo('<a href="ajout.php"> <input type="submit" value="Ajouter" name="Ajouter"> </a>');
     }
     ?>
-    <a href="ajout.php"> <input type="button" value="Ajouter" name="Ajouter"> </a>
-
-</body>
-
-</html>

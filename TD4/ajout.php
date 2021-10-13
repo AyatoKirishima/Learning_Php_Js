@@ -14,7 +14,10 @@
 
     <?php
     include_once "connexion.php";
-    //include_once "sites.php";
+    include_once "afficher.php";
+
+    //session_start();
+    //$_SESSION["nom"] = $nom;
 
     if (array_key_exists('nom', $_POST) && array_key_exists('ville', $_POST) && array_key_exists('latitude', $_POST) && array_key_exists('longitude', $_POST)) {
         $nom = $_POST['nom'];
@@ -32,54 +35,6 @@
         $insert_stmt->execute();
         // Redirection après ajout
         header('Location:sites.php');
-    }
-
-    include_once 'connexion.php';
-
-    $result = $objPdo->query('select * from Sites');
-    while ($row = $result->fetch()) {
-        // echo $row ['idSite'] . " - " . $row ['Nom'] . " - " . $row ['Ville'] . " - " . $row ['Latitude'] . " - " . $row ['Longitude'] . "<br />";
-
-        echo ('<table>
-                <thead>
-                    <tr>
-                        <td>
-                            Id
-                        </td>
-
-                        <td>
-                            Nom
-                        </td>
-
-                        <td>
-                            Ville
-                        </td>
-
-                        <td>
-                            Latitude
-                        </td>
-
-                        <td>
-                            Longitude
-                        </td>
-                    </tr>
-                </thead>');
-
-        foreach ($result as $row) {
-            echo ('<tr>');
-            echo ('<td>' . $row["idSite"] . '</td>');
-            echo ('<td>' . $row["Nom"] . '</td>');
-            echo ('<td>' . $row["Ville"] . '</td>');
-            echo ('<td>' . $row["Latitude"] . '</td>');
-            echo ('<td>' . $row["Longitude"] . '</td>');
-            //echo('<td><input type="submit" value="Supprimer" name="Supprimer"></td>');
-            //echo('<td><input type="submit" value="Modifier" name="Modifier"></td>');
-            //echo('<td><input type="submit" value="Voir" name="Ventes"></td>');
-            echo ('</tr>');
-        }
-
-        echo ("</table>");
-        //echo('<a href="ajout.php"> <input type="submit" value="Ajouter" name="Ajouter"> </a>');
     }
     ?>
     <br>
@@ -101,7 +56,7 @@
 
     <br>
     <a href="sites.php">
-        <input type="submit" value="Retour" name="Retour">
+        <input type="button" value="Retour" name="Retour">
     </a>
 </body>
 
