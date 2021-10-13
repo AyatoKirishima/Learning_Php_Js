@@ -15,6 +15,13 @@
 
 <?php
         include_once 'connexion.php';
+
+        // Suppression
+        function delete() {
+            include_once 'connexion.php';
+            $delete_stmt = $objPdo->query("DELETE FROM Sites WHERE idSite = " . $row["idSite"]);
+        }
+        
         $result = $objPdo->query('select * from Sites');
         while ($row=$result->fetch( ) )
         {
@@ -65,7 +72,7 @@
                     echo ('<td>'.$row["Ville"].'</td>');
                     echo ('<td>'.$row["Latitude"].'</td>');
                     echo ('<td>'.$row["Longitude"].'</td>');
-                    echo('<td><input type="submit" value="Supprimer" name="Supprimer"></td>');
+                    echo('<td><input type="submit" value="Supprimer" name="Supprimer" onclick="delete()"></td>');
                     echo('<td><input type="submit" value="Modifier" name="Modifier"></td>');
                     echo('<td><input type="submit" value="Voir" name="Ventes"></td>');
                     echo('</tr>');
