@@ -51,16 +51,9 @@
                         </td>
 
                         <td>
-                            Supprimer
+                            Actions
                         </td>
 
-                        <td>
-                            Modifier
-                        </td>
-
-                        <td>
-                            Ventes
-                        </td>
                     </tr>
                 </thead>');
 
@@ -72,9 +65,7 @@
                     echo ('<td>'.$row["Ville"].'</td>');
                     echo ('<td>'.$row["Latitude"].'</td>');
                     echo ('<td>'.$row["Longitude"].'</td>');
-                    echo('<td><input type="submit" value="Supprimer" name="Supprimer" onclick="delete()"></td>');
-                    echo('<td><input type="submit" value="Modifier" name="Modifier"></td>');
-                    echo('<td><input type="submit" value="Voir" name="Ventes"></td>');
+                    echo('<td><input type="submit" value="Supprimer" name="Supprimer" onclick="delete()"><input type="submit" value="Modifier" name="Modifier"><input type="submit" value="Ventes" name="Ventes"></td>');
                     echo('</tr>');
                 }
 

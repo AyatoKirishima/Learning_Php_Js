@@ -30,6 +30,8 @@
         $insert_stmt->bindValue(3, $latitude, PDO::PARAM_STR);
         $insert_stmt->bindValue(4, $longitude, PDO::PARAM_STR);
         $insert_stmt->execute();
+        // Redirection après ajout
+        header('Location:sites.php');
     }
 
     include_once 'connexion.php';
